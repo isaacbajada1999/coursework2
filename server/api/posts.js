@@ -48,15 +48,12 @@ router.delete('/:id', async (req, res) =>{
 
     async  function loadpostscollection() {
 
-    const client = await mongodb.MongoClient.connect(
+    const client = await mongodb.MongoClient.connect
 
-            'mongodb://127.0.0.1:27017',
-
-        {
-
+        (`mongodb+srv://isaac:isaac@cluster0-mazyf.mongodb.net/test?retryWrites=true&w=majority`,{
             useNewUrlparser: true
-                }
-    );
+
+    });
 
     return client.db('studentdb').collection('course');
 
