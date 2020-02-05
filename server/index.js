@@ -15,12 +15,13 @@ const users = require('./api/users');
 app.use('/api/posts', posts);
 app.use('/api/users', users);
 
-if(process.env.NODE_ENV === 'production') {
+// Handle production
+if (process.env.NODE_ENV === 'production') {
+    // Static folder
+    app.use(express.static(__dirname + '/public/'));
 
-
-    app.use(express.static(__dirname + 'public/'))
-
-    app.get(/.*/, (req, res) => res.sendfile(__dirname + '/public/index.html'))
+    // Handle SPA
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 }
 
 const  port = process.env.port || 5000;
