@@ -1,8 +1,8 @@
 <template>
   <div id="app">
 
-    <UserComponent />
-    <PostComponent />
+    <userComponent />
+    <postComponent />
 
   </div>
 </template>
