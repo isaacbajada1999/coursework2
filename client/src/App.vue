@@ -1,22 +1,24 @@
 <template>
   <div id="app">
 
-    <router-view></router-view>
-
-
+    <UserComponent />
+    <PostComponent />
 
   </div>
 </template>
 
 <script>
+  import PostComponent from './components/postComponent.vue'
+  import UserComponent from './components/userComponent.vue'
 
 
-
-
-export default {
-  name: 'app'
-
-}
+  export default {
+    name: 'app',
+    components: {
+      PostComponent,
+      UserComponent
+    }
+  }
 </script>
 
 <style>
