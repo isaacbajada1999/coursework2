@@ -38,7 +38,7 @@ router.post('/', async (req,res) =>{
 
 });
 
-async  function loadpostscollection() {
+async  function loaduserscollection() {
 
     const client = await mongodb.MongoClient.connect
 
